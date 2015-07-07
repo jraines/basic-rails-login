@@ -1,8 +1,21 @@
+<% if current_user %>
+  <%= link_to "Create New Post", new_post_path %>
+<% end %>
+
 <% @posts.each do |p| %>
-  <h2>
-    <%= p.title %>
-  </h2>
-  <p>
-    <%= p.body %>
-  </p>
+  <article>
+    <h2>
+      <%= p.title %>
+    </h2>
+    <p>
+      <%= p.body %>
+    </p>
+    <p>
+      BY: <br>
+      <%= p.user.username %><br>
+      ON: <br>
+
+      <%= p.created_at %><br>
+    </p>
+  </article>
 <% end %>
