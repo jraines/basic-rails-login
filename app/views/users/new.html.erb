@@ -3,9 +3,10 @@
   <%= f.text_field :username, placeholder: "Username" %>
   <%= f.password_field :password, placeholder: "Password" %>
 
-  <-- this will not be in params[:user] because it is not attached to the f
+  <!--this will not be in params[:user] because it is not attached to the f
       also note that I had to use the form_tag style helper here because I
       am not attaching it to the object related form_for f -->
+
   <%= password_field_tag :password_confirmation, nil, placeholder: "Confirm Password" %>
 
   <%= f.label :birthday %>
