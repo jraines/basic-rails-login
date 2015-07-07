@@ -24,6 +24,13 @@
       <%= flash[:alert] %>
     </div>
   <% end %>
+
+  <% if flash[:notice] %>
+    <div style="background:green; color: white;">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
 </header>
 
 <%= yield %>
