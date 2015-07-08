@@ -13,6 +13,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+    @post = Post.find params[:id]
+  end
+
   def create
     @post = current_user.posts.create params[:post]
     redirect_to posts_path

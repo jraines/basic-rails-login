@@ -2,18 +2,4 @@
   <%= link_to "Create New Post", new_post_path %>
 <% end %>
 
-<% @posts.each do |p| %>
-  <article class="post">
-    <h2>
-      <%= p.title %>
-    </h2>
-    <p class='post-body'>
-      <%= p.body %>
-    </p>
-    <p class='post-attribution'>
-      Posted by <%= p.user.username %>
-      at <%= p.created_at %>
-
-    </p>
-  </article>
-<% end %>
+<%= render @posts %>

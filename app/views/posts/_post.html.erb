@@ -1,0 +1,13 @@
+<article class="post">
+    <h2>
+      <%= link_to post.title, post_path(post) %>
+    </h2>
+    <p class='post-body'>
+      <%= post.body %>
+    </p>
+    <p class='post-attribution'>
+      Posted by <%= post.user.username %>
+      at <%= post.created_at %>
+
+    </p>
+  </article>
