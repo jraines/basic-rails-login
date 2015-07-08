@@ -3,6 +3,10 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def index
+    @users = User.all
+  end
+
   def create
     if params[:user][:password] == params[:password_confirmation]
       @user = User.create params[:user]

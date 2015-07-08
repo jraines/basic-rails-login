@@ -3,19 +3,17 @@
 <% end %>
 
 <% @posts.each do |p| %>
-  <article>
+  <article class="post">
     <h2>
       <%= p.title %>
     </h2>
-    <p>
+    <p class='post-body'>
       <%= p.body %>
     </p>
-    <p>
-      BY: <br>
-      <%= p.user.username %><br>
-      ON: <br>
+    <p class='post-attribution'>
+      Posted by <%= p.user.username %>
+      at <%= p.created_at %>
 
-      <%= p.created_at %><br>
     </p>
   </article>
 <% end %>
