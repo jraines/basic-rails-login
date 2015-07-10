@@ -1,6 +1,5 @@
-<% if current_user %>
-  <%= link_to "Create New Post", new_post_path %>
-<% end %>
+
+<%= publish_or_count(@posts) %>
 
 <%= render partial: 'post', collection: @posts, locals: {truncate_post: true} %>
 
