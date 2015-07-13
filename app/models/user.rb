@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+
+  validates_presence_of :username, :password
+
+  validates :username, { uniqueness: true, message: "Pick another username" }
+
+  validates :password, { confirmation: true }
+
   has_many :posts
   has_many :comments
 

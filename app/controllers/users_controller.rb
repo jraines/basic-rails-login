@@ -8,20 +8,23 @@ class UsersController < ApplicationController
   end
 
   def create
-    if params[:user][:password] == params[:password_confirmation]
-      @user = User.create user_params
+    @user = User.new(user_params)
+    if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "Thanks for Signing Up"
       redirect_to posts_path
     else
-      flash[:alert] = "Your password did not match confirmation"
-      redirect_to new_post_path
+      flash[:alert] = "Something went wrong, check errors below"
+      render :new
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :birthday)
+    params.require(:user).permit(:username,
+                                 :password,
+                                 :password_confirmation,
+                                 :birthday)
   end
 end
