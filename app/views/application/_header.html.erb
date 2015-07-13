@@ -20,4 +20,11 @@
       <%= flash[:notice] %>
     </div>
   <% end %>
+
+  <nav>
+    <ul>
+      <%= highlightable_li("Home", root_path) %>
+      <%= highlightable_li("Posts", posts_path) %>
+    </ul>
+  </nav>
 </header>
